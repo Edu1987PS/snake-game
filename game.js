@@ -120,11 +120,11 @@ function update() {
     
     const head = { x: snake[0].x + dx, y: snake[0].y + dy };
     
-    // Check wall collision
-    if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-        gameOver();
-        return;
-    }
+    // Wrap around walls (pass through)
+    if (head.x < 0) head.x = tileCount - 1;
+    if (head.x >= tileCount) head.x = 0;
+    if (head.y < 0) head.y = tileCount - 1;
+    if (head.y >= tileCount) head.y = 0;
     
     // Check self collision
     for (let segment of snake) {
@@ -158,7 +158,7 @@ function update() {
 function gameOver() {
     isRunning = false;
     clearInterval(gameLoop);
-    alert(`Game Over! Puntuación: ${score}`);
+    alert(`Game Over! Golpeaste tu propio cuerpo. Puntuación: ${score}`);
 }
 
 function startGame() {
@@ -218,6 +218,12 @@ difficultySelect.addEventListener('change', () => {
         gameLoop = setInterval(update, speed);
     }
 });
+
+// Mobile button controls
+document.getElementById('btnUp').addEventListener('click', () => { if (dy !== 1) { dx = 0; dy = -1; } });
+document.getElementById('btnDown').addEventListener('click', () => { if (dy !== -1) { dx = 0; dy = 1; } });
+document.getElementById('btnLeft').addEventListener('click', () => { if (dx !== 1) { dx = -1; dy = 0; } });
+document.getElementById('btnRight').addEventListener('click', () => { if (dx !== -1) { dx = 1; dy = 0; } });
 
 // Initial draw
 draw();
