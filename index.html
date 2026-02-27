@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Snake Moderno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🐍 Snake</h1>
+        <div class="score-board">
+            <div class="score">Puntuación: <span id="score">0</span></div>
+            <div class="high-score">Récord: <span id="highScore">0</span></div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls-info">
+            <p>Usa <strong>← ↑ ↓ →</strong> o <strong>WASD</strong> para mover</p>
+            <button id="startBtn">▶ Iniciar</button>
+            <button id="pauseBtn">⏸ Pausar</button>
+        </div>
+        <div class="difficulty">
+            <label>Dificultad:</label>
+            <select id="difficulty">
+                <option value="150">Fácil</option>
+                <option value="100" selected>Normal</option>
+                <option value="70">Difícil</option>
+                <option value="50">Experto</option>
+            </select>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00ff88, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.score, .high-score {
+    background: rgba(0, 255, 136, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.score span, .high-score span {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+canvas {
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+}
+
+.controls-info {
+    margin-top: 20px;
+}
+
+.controls-info p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.controls-info strong {
+    color: #00ccff;
+}
+
+button {
+    background: linear-gradient(135deg, #00ff88, #00ccff);
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 25px;
+    color: #1a1a2e;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.difficulty {
+    margin-top: 20px;
+}
+
+.difficulty label {
+    margin-right: 10px;
+    color: #aaa;
+}
+
+.difficulty select {
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.difficulty select option {
+    background: #1a1a2e;
+}
